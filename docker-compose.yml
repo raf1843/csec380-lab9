@@ -1,0 +1,17 @@
+version: '2'
+services:
+  lime:
+    container_name: lime
+    build: .
+    ports:
+      - 80:80
+  db:
+    container_name: db
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=lime
+      - MYSQL_USER=lime
+      - MYSQL_PASSWORD=lime
